@@ -366,6 +366,16 @@ filter_builtin_sources(
 )
 
 filter_builtin_sources(
+    name = "builtins_loongarch64_sources",
+    srcs = [
+        # do not sort: the architecture-specific fp_mode.c must override the generic one.
+        ":builtins_generic_srcs",
+        ":builtins_generic_tf_sources",
+        "lib/builtins/loongarch/fp_mode.c",
+    ],
+)
+
+filter_builtin_sources(
     name = "builtins_armv7_sources",
     srcs = [
         # arm_or_thumb2_base_SOURCES
@@ -568,6 +578,7 @@ cc_library(
             "@platforms//cpu:x86_64": [":builtins_x86_64_sources"],
             "@platforms//cpu:aarch64": [":builtins_aarch64_sources"],
             "@platforms//cpu:riscv64": [":builtins_riscv64_sources"],
+            "@platforms//cpu:loongarch64": [":builtins_loongarch64_sources"],
             "@platforms//cpu:s390x": [":builtins_s390x_sources"],
             "@platforms//cpu:armv7": [":builtins_armv7_sources"],
             "@platforms//cpu:wasm32": [":builtins_wasm32_sources"],
@@ -609,6 +620,7 @@ cc_library(
             # - riscv64
             "@platforms//cpu:aarch64",
             "@platforms//cpu:riscv64",
+            "@platforms//cpu:loongarch64",
             "@platforms//cpu:x86_64",
         ): [
             ":builtins_bf16_sources",
@@ -700,6 +712,7 @@ cc_library(
             # - thumbeb
             "@platforms//cpu:aarch64",
             "@platforms//cpu:riscv64",
+            "@platforms//cpu:loongarch64",
             "@platforms//cpu:x86_64",
         ): [
             "COMPILER_RT_HAS_FLOAT16",
