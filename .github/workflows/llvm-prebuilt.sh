@@ -35,7 +35,7 @@ bazel \
   --bazelrc=".github/workflows/ci.bazelrc" \
   --host_jvm_args=-Xmx8g \
   build \
-  --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+  --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
   --config=remote \
   --config=release \
   --jobs=128 \
