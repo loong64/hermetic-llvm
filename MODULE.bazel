@@ -162,6 +162,7 @@ llvm_dev.configure(targets = [
     "AMDGPU",
     "ARM",
     "BPF",
+    "LoongArch",
     "NVPTX",
     "RISCV",
     "SystemZ",

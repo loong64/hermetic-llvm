@@ -36,7 +36,7 @@ def _glibc_stubs_impl(ctx):
     arch = target.split("-")[0]
     _, major, minor = target.rsplit(".", 2)
     if not glibc_supported(arch, major + "." + minor):
-        fail("RISC-V requires glibc >= 2.27; requested {}".format(target))
+        fail("Unsupported glibc version for {}: {}".format(arch, target))
     version_script, assembly_outputs = _generate_glibc_stubs(ctx, target, "build")
 
     prefix, major, minor = target.rsplit(".", 2)
