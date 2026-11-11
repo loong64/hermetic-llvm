@@ -34,7 +34,7 @@ fi
 bazel \
   --bazelrc=".github/workflows/ci.bazelrc" \
   build \
-  --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+  --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
   --config=remote \
   --config=release \
   --repo_env=BAZEL_MSVC_RUNTIME_VISUAL_STUDIO_EULA=1 \
