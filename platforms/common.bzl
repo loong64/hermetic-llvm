@@ -12,6 +12,7 @@ SUPPORTED_TARGETS = [
     ("linux", "x86_64"),
     ("linux", "aarch64"),
     ("linux", "riscv64"),
+    ("linux", "loongarch64"),
     ("linux", "s390x"),
     ("linux", "armv7"),
     ("windows", "x86_64"),
@@ -37,6 +38,7 @@ LIBC_SUPPORTED_TARGETS = [
     ("linux", "x86_64"),
     ("linux", "aarch64"),
     ("linux", "riscv64"),
+    ("linux", "loongarch64"),
     ("linux", "s390x"),
     ("linux", "armv7"),
 ]

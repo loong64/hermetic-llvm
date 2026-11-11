@@ -11,6 +11,8 @@ def arch_to_kernel_arch(arch):
         return "x86"
     elif arch == "aarch64":
         return "arm64"
+    elif arch == "loongarch64":
+        return "loongarch"
     elif arch == "riscv64":
         return "riscv"
     elif arch == "s390x":
