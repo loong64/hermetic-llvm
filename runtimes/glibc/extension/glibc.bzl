@@ -64,6 +64,10 @@ def _glibc_impl(module_ctx):
 
     for version in GLIBC_VERSIONS:
         for (target_os, target_arch) in LIBC_SUPPORTED_TARGETS:
+            # LoongArch requires glibc >= 2.36; the pinned headers index
+            # also has no LoongArch archive for 2.42.
+            if target_arch == "loongarch64" and (tuple([int(part) for part in version.split(".")]) < (2, 36) or version == "2.42"):
+                continue
             target = "{}-{}-gnu".format(target_arch, target_os)
 
             #TODO(cerisier): Share the repository between targets
