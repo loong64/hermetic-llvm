@@ -79,7 +79,7 @@ _exec_platform_tag = tag_class(
         ),
         "arch": attr.string(
             mandatory = True,
-            values = ["x86_64", "aarch64", "riscv64", "s390x", "armv7"],
+            values = ["x86_64", "aarch64", "riscv64", "s390x", "armv7", "loongarch64"],
         ),
     },
 )
@@ -96,6 +96,7 @@ _target_platform_tag = tag_class(
                 "x86_64",
                 "aarch64",
                 "riscv64",
+                "loongarch64",
                 "s390x",
                 "armv7",
                 "bpfeb",

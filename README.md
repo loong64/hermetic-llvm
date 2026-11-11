@@ -25,7 +25,7 @@ bazel_dep(name = "llvm", version = "0.7.3")
 register_toolchains("@llvm//toolchain:all")
 ```
 
-See https://github.com/hermeticbuild/hermetic-llvm/releases/latest
+See https://github.com/loong64/hermetic-llvm/releases/latest
 
 This registers all toolchains declared by this module for all supported targets.
 
