@@ -20,6 +20,8 @@ def glibc_includes(cpu):
             "sysdeps/unix/sysv/linux/riscv/rv64",
         ]
         cpu = "riscv"
+    elif cpu == "loongarch64":
+        cpu = "loongarch"
     elif cpu == "s390x":
         # s390x uses s390/s390-64 subdirectories in glibc's sysdeps hierarchy.
         os_abi_variant = [

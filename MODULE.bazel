@@ -95,6 +95,7 @@ llvm.configure(
         "AMDGPU",
         "ARM",
         "BPF",
+        "LoongArch",
         "NVPTX",
         "RISCV",
         "SystemZ",
