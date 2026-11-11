@@ -64,6 +64,7 @@ _TYPEDEFS = [
     ("unsigned id_t", "id_t"),
     ("unsigned int    uint32_t", "uint32_t"),
     ("unsigned int nlink_t", "nlink_t"),
+    ("unsigned nlink_t", "nlink_t"),
     ("unsigned long pthread_t", "pthread_t"),
     ("unsigned long wctype_t", "wctype_t"),
     ("unsigned mode_t", "mode_t"),

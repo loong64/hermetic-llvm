@@ -253,7 +253,7 @@ jobs:
           bazel \
             --bazelrc=.bazelrc \
             test \
-            --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+            --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
             --repo_env=BAZEL_MACOS_USE_HOST_SDK=1 \
             //:objc_cc_test
 
