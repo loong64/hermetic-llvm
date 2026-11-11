@@ -33,6 +33,7 @@ DEFAULT_LIBC = "gnu.2.28"
 # TODO(cerisier): we should let users choose the kernel headers version
 DEFAULT_LIBCS = {
     ("linux", "riscv64"): "gnu.2.33",
+    ("linux", "loongarch64"): "gnu.2.36",
 }
 
 def default_libc(target_os, target_cpu):

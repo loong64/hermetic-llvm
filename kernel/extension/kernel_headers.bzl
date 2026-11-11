@@ -19,7 +19,7 @@ _SUPPORTED_ARCHS = [
     # "arc",
     # "arm",
     # "csky",
-    # "loongarch",
+    "loongarch",
     # "m68k",
     # "mips",
     # "openrisc",

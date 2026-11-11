@@ -16,6 +16,8 @@ def glibc_includes(cpu):
 
     if cpu == "riscv64":
         cpu = "riscv"
+    elif cpu == "loongarch64":
+        cpu = "loongarch"
 
     return [
         "include",
