@@ -70,6 +70,7 @@ _LLVM_22_SOURCE_PATCHES = [
 ] + _BEFORE_23_SOURCE_PATCHES + _DEFAULT_SOURCE_PATCHES
 
 _LLVM_23_SOURCE_PATCHES = [
+    "//3rd_party/llvm-project/x.x/patches:compiler-rt-loongarch-trunctfbf2.patch",
     "//3rd_party/llvm-project/x.x/patches:llvm-macho-arm64e-x1.patch",
     "//3rd_party/llvm-project/x.x/patches:clang-bazel-static-windows.patch",
     "//3rd_party/llvm-project/x.x/patches:libcxx-vcruntime-nothrow.patch",
