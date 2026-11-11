@@ -39,11 +39,20 @@ DEFAULT_LIBC = "gnu.2.28"
 # Keep RISC-V on a libc whose default linux UAPI headers satisfy that.
 DEFAULT_LIBCS = {
     ("linux", "riscv64"): "gnu.2.33",
+    ("linux", "loongarch64"): "gnu.2.36",
 }
 
 def default_libc(target_os, target_cpu):
     return DEFAULT_LIBCS.get((target_os, target_cpu), DEFAULT_LIBC)
 
 def glibc_supported(target_cpu, version):
-    """Whether this architecture exists in the requested glibc release."""
-    return target_cpu != "riscv64" or tuple([int(part) for part in version.split(".")]) >= (2, 27)
+    """Whether this architecture has sources and headers for the glibc release."""
+    # The 2.42-20251210 headers release has no LoongArch archive.
+    if target_cpu == "loongarch64" and version == "2.42":
+        return False
+
+    minimum_version = {
+        "riscv64": (2, 27),
+        "loongarch64": (2, 36),
+    }.get(target_cpu)
+    return minimum_version == None or tuple([int(part) for part in version.split(".")]) >= minimum_version
