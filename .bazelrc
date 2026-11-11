@@ -62,8 +62,8 @@ common --bes_backend=grpcs://remote.buildbuddy.io
 # remote execution and the remote downloader) but not write to the action
 # cache, so builds using it only consume cached results. CI and release builds
 # override it with their own secret key via .github/actions/buildbuddy-api-key.
-common --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7
-common --bes_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7
+common --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST
+common --bes_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST
 common --noremote_upload_local_results
 common --experimental_remote_downloader=grpcs://remote.buildbuddy.io
 common --grpc_keepalive_time=30s
