@@ -17,6 +17,7 @@ _DEFAULT_SOURCE_PATCHES = [
     "//3rd_party/llvm-project/x.x/patches:llvm-driver-best-tool-match.patch",
     "//3rd_party/llvm-project/x.x/patches:llvm-dsymutil-corefoundation.patch",
     "//3rd_party/llvm-project/x.x/patches:compiler-rt-symbolizer_skip_cxa_atexit.patch",
+    "//3rd_party/llvm-project/x.x/patches:compiler-rt-loongarch-trunctfbf2.patch",
     "//3rd_party/llvm-project/x.x/patches:lit_test_stub.patch",
     "//3rd_party/llvm-project/x.x/patches:pfm-rules-cc-load.patch",
     "//3rd_party/llvm-project/x.x/patches:clang-hardlink-filenames.patch",
@@ -56,6 +57,7 @@ _LLVM_22_SOURCE_PATCHES = [
 ] + _DEFAULT_SOURCE_PATCHES
 
 _LLVM_23_SOURCE_PATCHES = [
+    "//3rd_party/llvm-project/x.x/patches:compiler-rt-loongarch-trunctfbf2.patch",
     "//3rd_party/llvm-project/22.x/patches:lld-coff-thinlto-lazy-index.patch",
     "//3rd_party/llvm-project/23.x/patches:llvm-http-windows-gnu.patch",
     "//3rd_party/llvm-project/23.x/patches:llvm-link-multicall.patch",
