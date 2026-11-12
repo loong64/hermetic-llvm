@@ -29,12 +29,12 @@ PREBUILT_LLVM_VERSION = "22.1.6"
 PREBUILT_LLVM_SUFFIX = "-1"
 
 LLVM_TOOLCHAIN_MINIMAL_SHA256 = {
-    "darwin-amd64": "cc79ad7858a02589b334643b38b7112cb2ca7a7546dfefca3feee244f58c209e",
-    "darwin-arm64": "da43c29334d92d232f7951ce7be23cf5958f9388fa02ba75a87600a5900b2d52",
-    "linux-amd64-musl": "19ecc9a5a3eedd00d7a46e35b292a908ec4eba4f33a40d2566e9a1d2cce31d85",
-    "linux-arm64-musl": "3bef1e2cd4de0b35d5305a00d125b8a3257b926171f71ab95bc4ca755fee1647",
-    "windows-amd64": "225a8da883543ecd8df865457931d09f38e344243901ad97ddc1fc2a2266563a",
-    "windows-arm64": "31f6c4637a27028ad5251ce7aa4ed244f744190eac90cfe7755a7a5d91b11b40",
+    "darwin-amd64": "14391b7fa89279593fe14b3db502ce7d4712996d257baaf208863301131c0907",
+    "darwin-arm64": "657926e82c249729d7e7e75633f6d38e563ee7b2953e6ab8b1b752e4d9930caa",
+    "linux-amd64-musl": "66270a07e4aac32d204ca8e72e329c5f08cf9ce8567a5bfa2cef5420be1433ca",
+    "linux-arm64-musl": "58b7c70d835bfa5444cb074f4482faa91ce37228a97451c51263ccdbf39727ab",
+    "windows-amd64": "21224dd05824431e439f21570724ba8092035ac925ee330b5b560b93c608342a",
+    "windows-arm64": "e9726439eb2e0e6531ad8e204cf2ebe531bfd7380cde27681b665889e037bed9",
 }
 
 [
@@ -45,7 +45,7 @@ LLVM_TOOLCHAIN_MINIMAL_SHA256 = {
         ),
         build_file = "//toolchain/llvm:llvm_release.BUILD.bazel" if "windows" not in target else "//toolchain/llvm:llvm_release_windows.BUILD.bazel",
         sha256 = sha256,
-        urls = ["https://github.com/hermeticbuild/hermetic-llvm/releases/download/llvm-{llvm_version}{prebuilt_llvm_suffix}/llvm-toolchain-minimal-{llvm_version}-{target}.tar.zst".format(
+        urls = ["https://github.com/loong64/hermetic-llvm/releases/download/llvm-{llvm_version}{prebuilt_llvm_suffix}/llvm-toolchain-minimal-{llvm_version}-{target}.tar.zst".format(
             llvm_version = PREBUILT_LLVM_VERSION,
             prebuilt_llvm_suffix = PREBUILT_LLVM_SUFFIX,
             target = target,
@@ -55,12 +55,12 @@ LLVM_TOOLCHAIN_MINIMAL_SHA256 = {
 ]
 
 TOOLCHAIN_EXTRAS_SHA256 = {
-    "darwin-amd64": "7f982146b033650295a568e2db2795753d6610919c4d0e90bc4baf53dfb88d04",
-    "darwin-arm64": "4244309df7e1cb3c602597dc30b2cf25064960b877e8087dfaaa2c3f57580588",
+    "darwin-amd64": "4529d0c90e01fa43a1afa87b28eccc80a49b9108aac922cb3c256cb10b410d62",
+    "darwin-arm64": "e7eb32cdfb5d72781f78d241e4e4d3ab31eae07fa22d74f0d5522472bd451095",
     "linux-amd64-musl": "418a27a0ab8ecf46e2e00bd4381efc0bcb54c28312261c4f36114842e5ecb20e",
     "linux-arm64-musl": "5f6bcc5a806902de3e6564675bb9a75cdcbc6167af05e0c888b9930b8890b2e1",
-    "windows-amd64-gnu": "a4d8f7893d3d373a928fe4d7be3fb113d3c73101f967718973518acb2a43544e",
-    "windows-arm64-gnu": "4a3835588fe46a5d48424d57e8a1c2743215143100bb4fe10b918374787b3505",
+    "windows-amd64-gnu": "4c2a2cdbe47447c3e7bd0dedbf6fbbfeb55394894a2dcb44f49a6339ac1edaba",
+    "windows-arm64-gnu": "05a31706b98050647c4141aaa8ad0f2dc84c4e48bf383bf9fdb9301ecc557e3e",
 }
 
 TOOLCHAIN_EXTRAS_VERSION = "20260429"
@@ -70,7 +70,7 @@ TOOLCHAIN_EXTRAS_VERSION = "20260429"
         name = "toolchain-extra-prebuilts-{target}".format(target = target.replace("-musl", "").replace("-gnu", "")),
         build_file = "//prebuilt/extras:extras.BUILD.bazel",
         sha256 = sha256,
-        urls = ["https://github.com/hermeticbuild/hermetic-llvm/releases/download/prebuilts-extras-{version}/toolchain-extra-prebuilts-{version}-{target}.tar.zst".format(
+        urls = ["https://github.com/loong64/hermetic-llvm/releases/download/prebuilts-extras-{version}/toolchain-extra-prebuilts-{version}-{target}.tar.zst".format(
             target = target,
             version = TOOLCHAIN_EXTRAS_VERSION,
         )],
@@ -100,6 +100,7 @@ llvm.configure(
         "AMDGPU",
         "ARM",
         "BPF",
+        "LoongArch",
         "NVPTX",
         "RISCV",
         "SystemZ",

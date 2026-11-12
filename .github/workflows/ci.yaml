@@ -68,7 +68,7 @@ jobs:
             --bazelrc=$GITHUB_WORKSPACE/.github/workflows/ci.bazelrc \
             --bazelrc=.bazelrc \
             test \
-            --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+            --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
             //...
 
   test_windows:
@@ -110,7 +110,7 @@ jobs:
             test \
             --repository_cache= \
             --repo_contents_cache= \
-            --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+            --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
             --jobs=100 \
             $EXTRA_ARGS \
             //...
@@ -146,7 +146,7 @@ jobs:
           bazel \
             --bazelrc=.bazelrc \
             build \
-            --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+            --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
             //:main_default
 
   docs:
@@ -161,7 +161,7 @@ jobs:
           bazel \
             run \
             --config=remote \
-            --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+            --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
             //gazelle:gazelle -- -mode=diff
 
       - name: Build release docs
@@ -180,5 +180,5 @@ jobs:
         run: |
           bazel \
             run \
-            --remote_header=x-buildbuddy-api-key=4jtaxdhxtyu4ylxdEwI7 \
+            --remote_header=x-buildbuddy-api-key=c6Ky527U7TlAXlxYnnST \
             //internal_tools:buildifier.check
