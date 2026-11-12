@@ -79,6 +79,7 @@ PLATFORMS = [
     "@llvm//platforms:linux_riscv64",
     "@llvm//platforms:linux_s390x",
     "@llvm//platforms:linux_armv7",
+    "@llvm//platforms:linux_loongarch64",
     "@llvm//platforms:macos_x86_64",
     "@llvm//platforms:macos_aarch64",
     "@llvm//platforms:windows_amd64",
@@ -99,6 +100,7 @@ PLATFORMS = [
     # RISC-V needs special LIBC treatment because of the kernel-glibc association we do.
     # Builtins requires kernel headers >= 5.10 which we hardcode to be 2.33+
     "@llvm//platforms:linux_riscv64_musl",
+    "@llvm//platforms:linux_loongarch64_musl",
 ]
 
 [
