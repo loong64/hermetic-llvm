@@ -63,6 +63,7 @@ toolchain.exec(arch = "aarch64", os = "linux")
 toolchain.target(arch = "x86_64", os = "linux")
 toolchain.target(arch = "aarch64", os = "linux")
 toolchain.target(arch = "riscv64", os = "linux")
+toolchain.target(arch = "loongarch64", os = "linux")
 
 use_repo(toolchain, "llvm_toolchains")
 

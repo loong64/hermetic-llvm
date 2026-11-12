@@ -89,6 +89,7 @@ _KMP_CONFIG_H_SUBSTITUTIONS = {
     "@platforms//cpu:arm": {"@LIBOMP_LEGAL_ARCH@": "ARM"},
     "@platforms//cpu:riscv64": {"@LIBOMP_LEGAL_ARCH@": "RISCV64"},
     "@platforms//cpu:s390x": {"@LIBOMP_LEGAL_ARCH@": "S390X"},
+    "@platforms//cpu:loongarch64": {"@LIBOMP_LEGAL_ARCH@": "LOONGARCH64"},
     "//conditions:default": {"@LIBOMP_LEGAL_ARCH@": "UNKNOWN"},
 })
 

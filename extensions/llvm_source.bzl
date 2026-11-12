@@ -7,6 +7,7 @@ load("//:http_bsdtar_archive.bzl", "http_bsdtar_archive")
 DEFAULT_LLVM_VERSIONS_INDEX_FILE = "//:llvm_versions.json"
 
 _DEFAULT_SOURCE_PATCHES = [
+    "//3rd_party/llvm-project/x.x/patches:compiler-rt-loongarch-trunctfbf2.patch",
     "//3rd_party/llvm-project/x.x/patches:llvm-extra.patch",
     "//3rd_party/llvm-project/x.x/patches:clang-prepend-arg-reexec.patch",
     "//3rd_party/llvm-project/x.x/patches:no_frontend_builtin_headers.patch",
