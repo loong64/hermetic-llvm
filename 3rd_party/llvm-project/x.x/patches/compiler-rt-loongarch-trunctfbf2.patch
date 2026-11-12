@@ -1,0 +1,9 @@
+diff --git a/compiler-rt/lib/builtins/trunctfbf2.c b/compiler-rt/lib/builtins/trunctfbf2.c
+--- a/compiler-rt/lib/builtins/trunctfbf2.c
++++ b/compiler-rt/lib/builtins/trunctfbf2.c
+@@ -11,4 +11,4 @@
+-#if defined(CRT_HAS_TF_MODE) && defined(__x86_64__)
++#if defined(CRT_HAS_TF_MODE) && (defined(__x86_64__) || defined(__loongarch64))
+ #define SRC_QUAD
+ #define DST_BFLOAT
+ #include "fp_trunc_impl.inc"
