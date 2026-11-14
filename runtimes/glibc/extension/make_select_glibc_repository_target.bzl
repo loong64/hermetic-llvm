@@ -22,7 +22,7 @@ def declare_glibc_repository_target(name, bazel_repository, bazel_target, archit
         target_name = "{}_{}_{}".format(name, target_os, target_arch)
         native.alias(
             name = target_name,
-            actual = select(versions, no_match_error = "Unsupported glibc version for {}; RISC-V requires glibc >= 2.27".format(target_arch)),
+            actual = select(versions, no_match_error = "Unsupported glibc version for {}; RISC-V requires glibc >= 2.27; LoongArch requires glibc >= 2.36 and has no pinned headers for 2.42".format(target_arch)),
             visibility = ["//visibility:private"],
         )
         targets["@llvm//platforms/config:{}_{}".format(target_os, target_arch)] = target_name

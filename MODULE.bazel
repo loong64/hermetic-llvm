@@ -42,6 +42,7 @@ llvm = use_extension("//extensions:llvm.bzl", "llvm")
 llvm.version(llvm_version = LLVM_VERSION)
 llvm.configure(targets = [
     "AArch64",
+    "LoongArch",
     "X86",
 ])
 use_repo(llvm, "llvm-project", "llvm_version")
@@ -59,12 +60,12 @@ use_repo(
 )
 
 TOOLCHAIN_EXTRAS_SHA256 = {
-    "darwin-amd64": "896012903967bb0e9993ce9348e2f18dae67149bd673a186cf89ece9f64bd060",
-    "darwin-arm64": "7df5f768ec8e82cd9847df90dac9b9cb1bc2a6628669487475adf341b58854eb",
+    "darwin-amd64": "e782fb0927a66fdf95c9d10b250df96ca721d2292d21618992aa16a33f6a1929",
+    "darwin-arm64": "78e0dd91943117eb8784f25eb2ca8990f411a2a448549e87ba6ef366fe59eecd",
     "linux-amd64-musl": "00bffd76731a34465064a3fe3dc2f11ebd51be09b659002c6b570e7cd202a882",
     "linux-arm64-musl": "be93b5abbef9e7380024ebdbb547a5e48b034ae205e26ccf000a8a99a945d37e",
-    "windows-amd64-gnu": "98ee08155617b96c2fc5295af2c3f22e04d1fad86df1040e581d6f5f41a5ddb5",
-    "windows-arm64-gnu": "79ebe46aadad7528d40926e9780dd29f0c07f47856a234550519e6879690264b",
+    "windows-amd64-gnu": "2bd37b023ce9bb543eb10b14580d72b30f079e434838edc342946246fc174311",
+    "windows-arm64-gnu": "1fe7191550afd5cff25bc82ce6ee8f75e1cd28cee56ab8aef1e87333f2f0107f",
 }
 
 TOOLCHAIN_EXTRAS_VERSION = "20261030"
@@ -74,7 +75,7 @@ TOOLCHAIN_EXTRAS_VERSION = "20261030"
         name = "toolchain-extra-prebuilts-{target}".format(target = target.replace("-musl", "").replace("-gnu", "")),
         build_file = "//prebuilt/extras:extras.BUILD.bazel",
         sha256 = sha256,
-        urls = ["https://github.com/hermeticbuild/hermetic-llvm/releases/download/prebuilts-extras-{version}/toolchain-extra-prebuilts-{version}-{target}.tar.zst".format(
+        urls = ["https://github.com/loong64/hermetic-llvm/releases/download/prebuilts-extras-{version}/toolchain-extra-prebuilts-{version}-{target}.tar.zst".format(
             target = target,
             version = TOOLCHAIN_EXTRAS_VERSION,
         )],
@@ -162,6 +163,7 @@ llvm_dev.configure(targets = [
     "AMDGPU",
     "ARM",
     "BPF",
+    "LoongArch",
     "NVPTX",
     "RISCV",
     "SystemZ",
